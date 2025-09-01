@@ -1,0 +1,29 @@
+.dashboard {
+  padding: 60px 0;
+  text-align: center;
+  flex: 1;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  min-height: calc(100vh - 80px);
+}
+
+.dashboard h2 {
+  margin-bottom: 20px;
+  color: var(--dark);
+  font-size: 2.2rem;
+}
+
+.dashboard p {
+  margin-bottom: 30px;
+  color: var(--gray);
+  font-size: 1.1rem;
+}
+
+.role {
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: capitalize;
+  background: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

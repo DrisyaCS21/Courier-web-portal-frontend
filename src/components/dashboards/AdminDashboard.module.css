@@ -1,0 +1,145 @@
+.adminDashboard {
+  padding: 20px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+  color: var(--primary);
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.adminControls {
+  display: flex;
+  gap: 15px;
+}
+
+.adminBtn {
+  background: var(--primary);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.adminBtn:hover {
+  background: var(--secondary);
+}
+
+.systemOverview {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.systemOverview h2 {
+  color: var(--dark);
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.systemGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.systemCard {
+  background: var(--light);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  border-left: 4px solid var(--accent);
+}
+
+.systemCard h3 {
+  color: var(--gray);
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.systemValue {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.recentActivity {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.recentActivity h2 {
+  color: var(--dark);
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.activityItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: var(--light);
+  border-radius: 8px;
+}
+
+.activityItem span:last-child {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .systemGrid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .adminControls {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .systemGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .activityItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
