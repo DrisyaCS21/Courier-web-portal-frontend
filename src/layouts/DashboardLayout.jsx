@@ -1,12 +1,14 @@
-import DashboardNav from '../components/DashboardNav/DashboardNav'
+// layouts/DashboardLayout.jsx
+import React from 'react';
 
 const DashboardLayout = ({ children }) => {
   return (
     <div className="dashboard-layout">
-      <DashboardNav />
-      <main>{children}</main>
+      <div className="dashboard-container">
+        {children}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default DashboardLayout
+export default DashboardLayout;

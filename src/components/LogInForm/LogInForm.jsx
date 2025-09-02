@@ -1,13 +1,19 @@
-import styles from './LoginForm.module.css'
+import styles from './LogInForm.module.css';
 
-const LoginForm = ({ loginData, setLoginData, handleLogin, goToRegister }) => {
+const LoginForm = ({ 
+  loginData, 
+  setLoginData, 
+  handleLogin, 
+  goToRegister,
+  handleForgotPassword 
+}) => {
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target
+    const { name, value, type, checked } = e.target;
     setLoginData(prev => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value
-    }))
-  }
+    }));
+  };
 
   return (
     <section className={styles.formSection}>
@@ -54,7 +60,9 @@ const LoginForm = ({ loginData, setLoginData, handleLogin, goToRegister }) => {
                 />
                 <label htmlFor="remember">Remember me</label>
               </div>
-              <a href="#" className={styles.forgotLink}>Forgot password?</a>
+              <a href="#" className={styles.forgotLink} onClick={handleForgotPassword}>
+                Forgot password?
+              </a>
             </div>
             
             <button type="submit" className={`btn btn-primary ${styles.submitButton}`}>
@@ -68,7 +76,7 @@ const LoginForm = ({ loginData, setLoginData, handleLogin, goToRegister }) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default LoginForm
+export default LoginForm; 

@@ -1,10 +1,14 @@
+// App.jsx
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PublicLayout from './layouts/PublicLayout';
 import AuthLayout from './layouts/AuthLayout';
+import DashboardLayout from './layouts/DashboardLayout';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import DashboardPage from './pages/Dashboard';
+import Dashboard from './pages/Dashboard';
+import ForgotPasswordNotice from './pages/ForgotPasswordNotice';
 import './App.css';
 
 function App() {
@@ -12,27 +16,46 @@ function App() {
     <Router>
       <div className="app">
         <Routes>
-          {/* Public pages with header */}
-          <Route path="/" element={
-            <PublicLayout>
-              <Home />
-            </PublicLayout>
-          } />
-          
-          {/* Auth pages without header */}
-          <Route path="/login" element={
-            <AuthLayout>
-              <Login />
-            </AuthLayout>
-          } />
-          <Route path="/register" element={
-            <AuthLayout>
-              <Register />
-            </AuthLayout>
-          } />
-          
-          {/* Dashboard pages with dashboard layout */}
-          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route 
+            path="/" 
+            element={
+              <PublicLayout>
+                <Home />
+              </PublicLayout>
+            } 
+          />
+          <Route 
+            path="/login" 
+            element={
+              <AuthLayout>
+                <Login />
+              </AuthLayout>
+            } 
+          />
+          <Route 
+            path="/register" 
+            element={
+              <AuthLayout>
+                <Register />
+              </AuthLayout>
+            } 
+          />
+          <Route 
+            path="/dashboard" 
+            element={
+              <DashboardLayout>
+                <Dashboard />
+              </DashboardLayout>
+            } 
+          />
+          <Route 
+            path="/forgot-password-notice" 
+            element={
+              <AuthLayout>
+                <ForgotPasswordNotice />
+              </AuthLayout>
+            } 
+          />
         </Routes>
       </div>
     </Router>

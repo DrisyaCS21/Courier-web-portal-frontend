@@ -1,65 +1,291 @@
+/* App.css */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-:root {
-  --primary: #2563eb;
-  --secondary: #3b82f6;
-  --accent: #22d3ee;
-  --dark: #1e293b;
-  --light: #f8fafc;
-  --success: #10b981;
-  --error: #ef4444;
-  --gray: #94a3b8;
 }
 
 body {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-  min-height: 100vh;
-  color: var(--dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
 }
 
 .app {
   min-height: 100vh;
+}
+
+/* Background layout styles */
+.auth-layout, .dashboard-layout {
+  min-height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Form container styles */
+.auth-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 30%;
+  min-width: 400px;
+  max-width: 500px;
+  margin-right: 50px;
+  width: 500px;
+}
+
+.dashboard-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 1200px;
+  min-height: 80vh;
+}
+
+.auth-header {
+  text-align: right;
+  margin-bottom: 650px;
+  margin-left: 0px;
+  margin-right: -250px;
+}
+
+.auth-header h1 {
+  color: #2c3e50;
+  font-size: 28px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.auth-header p {
+  color: #7f8c8d;
+  font-size: 16px;
+}
+
+/* Auth page styles */
+.auth-page {
+  width: 70%;
+}
+
+.auth-page h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #7f8c8d;
+  margin-bottom: 25px;
+}
+
+/* Form styles */
+.auth-form {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
 }
 
-.btn {
-  padding: 10px 20px;
+.form-group label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px 15px;
+  border: 3px solid #ddd;
+  border-radius: 16px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.password-requirements {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-top: 5px;
+}
+
+/* Account type toggle */
+.account-type-toggle {
+  display: flex;
   border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.account-type-toggle button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background-color: #f8f9fa;
+  color: #7f8c8d;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
+}
+
+.account-type-toggle button.active {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Checkbox group */
+.checkbox-group {
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.checkbox-group input {
+  width: auto;
+}
+
+.checkbox-group label {
+  font-weight: normal;
+}
+
+/* Button styles */
+.auth-button {
+  background-color: #3498db;
+  color: white;
   border: none;
-  font-size: 1rem;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.btn-primary {
-  background-color: var(--primary);
-  color: white;
+.auth-button:hover {
+  background-color: #2980b9;
 }
 
-.btn-primary:hover {
-  background-color: var(--secondary);
+/* Link styles */
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
 }
 
-.btn-outline {
-  background-color: transparent;
-  border: 2px solid var(--primary);
-  color: var(--primary);
+.auth-link a {
+  color: #3498db;
+  text-decoration: none;
 }
 
-.btn-outline:hover {
-  background-color: var(--primary);
-  color: white;
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+.forgot-password-link {
+  text-align: right;
+  margin-top: 5px;
+}
+
+.forgot-password-link a {
+  color: #7f8c8d;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.forgot-password-link a:hover {
+  text-decoration: underline;
+  color: #3498db;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .auth-container {
+    width: 90%;
+    min-width: unset;
+  }
+}
+/* Add these styles to your existing App.css */
+
+/* Form options layout */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -10px 0 15px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.remember-me label {
+  font-weight: normal;
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+  cursor: pointer;
+}
+
+.forgot-password-link {
+  text-align: right;
+}
+
+.forgot-password-link a {
+  color: #3498db;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.forgot-password-link a:hover {
+  text-decoration: underline;
+}
+
+/* Improved form group spacing */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+/* Responsive adjustments for form options */
+@media (max-width: 480px) {
+  .form-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .forgot-password-link {
+    align-self: flex-end;
+  }
 }
