@@ -1,35 +1,153 @@
 .hero {
-  padding: 80px 0;
-  text-align: center;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 80px 2rem 2rem;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: var(--dark);
+.heroContent {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
 }
 
-.hero p {
+.textContent h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.textContent p {
   font-size: 1.2rem;
-  color: var(--gray);
-  max-width: 700px;
-  margin: 0 auto 40px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
 }
 
 .heroButtons {
   display: flex;
-  gap: 15px;
+  gap: 1rem;
+}
+
+.primaryBtn, .secondaryBtn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.primaryBtn {
+  background: #e74c3c;
+  color: white;
+}
+
+.primaryBtn:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+.secondaryBtn {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.secondaryBtn:hover {
+  background: white;
+  color: #667eea;
+}
+
+.visualContent {
+  display: flex;
   justify-content: center;
 }
 
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.2rem;
+.trackingCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.trackingCard h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.trackingInput {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.trackingInput input {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
+  font-size: 1rem;
+}
+
+.trackingInput button {
+  padding: 1rem 1.5rem;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+}
+
+.arrow {
+  width: 2px;
+  height: 30px;
+  background: white;
+  margin: 0.5rem auto;
+  position: relative;
+}
+
+.arrow::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 968px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
   }
-  
-  .heroButtons {
-    flex-direction: column;
-    align-items: center;
+
+  .textContent h1 {
+    font-size: 2.5rem;
   }
 }

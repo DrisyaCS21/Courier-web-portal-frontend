@@ -1,5 +1,4 @@
-// App.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PublicLayout from './layouts/PublicLayout';
 import AuthLayout from './layouts/AuthLayout';
@@ -12,6 +11,24 @@ import ForgotPasswordNotice from './pages/ForgotPasswordNotice';
 import './App.css';
 
 function App() {
+  const [userRole, setUserRole] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleLogin = (role) => {
+    setUserRole(role);
+    setIsAuthenticated(true);
+  };
+
+  const handleRegister = (role) => {
+    setUserRole(role);
+    setIsAuthenticated(true);
+  };
+
+  const handleLogout = () => {
+    setUserRole('');
+    setIsAuthenticated(false);
+  };
+
   return (
     <Router>
       <div className="app">
@@ -28,7 +45,7 @@ function App() {
             path="/login" 
             element={
               <AuthLayout>
-                <Login />
+                <Login onLogin={handleLogin} />
               </AuthLayout>
             } 
           />
@@ -36,7 +53,7 @@ function App() {
             path="/register" 
             element={
               <AuthLayout>
-                <Register />
+                <Register onRegister={handleRegister} />
               </AuthLayout>
             } 
           />
@@ -44,7 +61,7 @@ function App() {
             path="/dashboard" 
             element={
               <DashboardLayout>
-                <Dashboard />
+                <Dashboard role={userRole} onLogout={handleLogout} />
               </DashboardLayout>
             } 
           />

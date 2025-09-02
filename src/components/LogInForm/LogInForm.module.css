@@ -1,33 +1,39 @@
-.formSection {
-  padding: 60px 0;
+.authContainer {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
   display: flex;
+  justify-content: center;
   align-items: center;
+  padding: 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center fixed;
+  background-size: cover;
 }
 
-.formContainer {
-  background: white;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+.authForm {
+  width: 100%;
   max-width: 450px;
-  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  padding: 30px;
 }
 
-.formTitle {
+.authHeader {
   text-align: center;
-  margin-bottom: 10px;
-  color: var(--dark);
-  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+.authHeader h1 {
+  font-size: 28px;
   font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 5px;
 }
 
-.formSubtitle {
-  text-align: center;
-  margin-bottom: 30px;
-  color: var(--gray);
-  font-size: 1rem;
+.authHeader p {
+  color: #7f8c8d;
+  font-size: 16px;
 }
 
 .formGroup {
@@ -38,108 +44,129 @@
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
-  color: var(--dark);
+  color: #2c3e50;
 }
 
 .formGroup input {
   width: 100%;
-  padding: 12px 15px;
-  border: 2px solid #e2e8f0;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: all 0.3s;
+  padding: 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
 }
 
 .formGroup input:focus {
-  border-color: var(--primary);
+  border-color: #3498db;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .formOptions {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
-.formCheck {
+.checkboxContainer {
   display: flex;
   align-items: center;
-  gap: 8px;
+  cursor: pointer;
+  color: #2c3e50;
 }
 
-.formCheck label {
-  margin: 0;
-  font-weight: 500;
-  color: var(--dark);
+.checkboxContainer input {
+  margin-right: 8px;
 }
 
 .forgotLink {
-  color: var(--primary);
+  color: #3498db;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .forgotLink:hover {
   text-decoration: underline;
 }
 
-.submitButton {
+.authBtn {
   width: 100%;
-  margin-bottom: 15px;
   padding: 15px;
-  font-size: 1.1rem;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
   font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.formFooter {
+.authBtn:hover {
+  background: #c0392b;
+}
+
+.authFooter {
   text-align: center;
-  margin-top: 25px;
-  padding-top: 20px;
-  border-top: 1px solid #e2e8f0;
+  margin-top: 20px;
 }
 
-.formFooter p {
-  color: var(--gray);
-  margin: 0;
+.authFooter p {
+  color: #7f8c8d;
 }
 
-.formFooter a {
-  color: var(--primary);
+.authFooter a {
+  color: #3498db;
   text-decoration: none;
   font-weight: 600;
 }
 
-.formFooter a:hover {
+.authFooter a:hover {
   text-decoration: underline;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .formSection {
-    padding: 30px 0;
-  }
-  
-  .formContainer {
-    padding: 25px;
-    margin: 0 15px;
-  }
-  
-  .formOptions {
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start;
-  }
+.recoveryMethods {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-@media (max-width: 480px) {
-  .formContainer {
-    padding: 20px;
-  }
-  
-  .formTitle {
-    font-size: 1.5rem;
-  }
+.recoveryMethod {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.recoveryMethod.selected {
+  border-color: #3498db;
+  background-color: #eaf6ff;
+}
+
+.recoveryMethod i {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #7f8c8d;
+  display: block;
+}
+
+.recoveryMethod.selected i {
+  color: #3498db;
+}
+
+.backLink {
+  color: #3498db;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  margin-top: 15px;
+}
+
+.backLink i {
+  margin-right: 5px;
 }

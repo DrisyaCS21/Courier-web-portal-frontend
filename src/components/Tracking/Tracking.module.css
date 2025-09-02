@@ -1,0 +1,159 @@
+/* components/Tracking/Tracking.module.css */
+.tracking {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: white;
+}
+
+.trackingContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.trackingContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.trackingContent > .textContent > p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.benefit {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.benefitIcon {
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.benefitText h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.benefitText p {
+  opacity: 0.8;
+}
+
+.trackingForm {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.formCard {
+  background: white;
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 400px;
+  color: var(--dark);
+}
+
+.formCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--dark);
+}
+
+.inputGroup {
+  margin-bottom: 1.5rem;
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.inputGroup input:focus {
+  border-color: var(--primary);
+}
+
+.trackButton {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: 1.5rem;
+}
+
+.trackButton:hover {
+  background: var(--primary-dark);
+}
+
+.exampleIds {
+  border-top: 1px solid var(--gray-light);
+  padding-top: 1.5rem;
+}
+
+.exampleIds p {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.exampleIds ul {
+  list-style: none;
+}
+
+.exampleIds li {
+  padding: 0.25rem 0;
+  color: var(--gray);
+  font-family: monospace;
+}
+
+@media (max-width: 968px) {
+  .trackingContent {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .benefit {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .trackingForm {
+    justify-content: center;
+  }
+}

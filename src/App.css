@@ -289,3 +289,51 @@ body {
     align-self: flex-end;
   }
 }
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+/* Background only for auth pages */
+.auth-layout {
+  min-height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Dashboard without background image */
+.dashboard-layout {
+  min-height: 100vh;
+  background-color: #f5f5f5; /* Solid color instead of image */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.dashboard-container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  min-height: 80vh;
+}
+
+/* Keep the rest of your existing styles for auth-container, etc. */
+.auth-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 30%;
+  min-width: 400px;
+  max-width: 500px;
+}

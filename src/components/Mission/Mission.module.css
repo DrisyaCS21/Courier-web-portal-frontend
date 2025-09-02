@@ -1,0 +1,82 @@
+/* components/Mission/Mission.module.css */
+.mission {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.missionContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.missionStatement {
+  margin-bottom: 2rem;
+}
+
+.missionStatement p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--gray);
+}
+
+.values {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.value {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.valueIcon {
+  font-size: 2rem;
+  background: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+
+.valueContent h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.valueContent p {
+  color: var(--gray);
+}
+
+.visualContent {
+  display: flex;
+  justify-content: center;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border-radius: var(--radius);
+  opacity: 0.8;
+}
+
+@media (max-width: 968px) {
+  .missionContent {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .value {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

@@ -1,217 +1,151 @@
-.formSection {
-  padding: 60px 0;
+.authContainer {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
   display: flex;
+  justify-content: center;
   align-items: center;
+  padding: 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center fixed;
+  background-size: cover;
 }
 
-.formContainer {
-  background: white;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+.authForm {
+  width: 100%;
   max-width: 500px;
-  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  margin-top: -50px;
 }
 
-.formTitle {
+.authHeader {
   text-align: center;
-  margin-bottom: 10px;
-  color: var(--dark);
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-.formSubtitle {
-  text-align: center;
-  margin-bottom: 30px;
-  color: var(--gray);
-  font-size: 1rem;
-}
-
-.roleSelection {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
   margin-bottom: 25px;
 }
 
-.roleOption {
-  border: 2px solid #e2e8f0;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s;
-  background: white;
+.authHeader h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 5px;
 }
 
-.roleOption:hover {
-  border-color: var(--primary);
-  transform: translateY(-2px);
-}
-
-.roleOption.selected {
-  border-color: var(--primary);
-  background-color: #f0f7ff;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
-}
-
-.roleOption i {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 15px;
-  display: block;
-}
-
-.roleOption h3 {
-  font-size: 1.1rem;
-  margin: 0;
-  color: var(--dark);
-  font-weight: 600;
+.authHeader p {
+  color: #7f8c8d;
+  font-size: 16px;
 }
 
 .formGroup {
-  margin-bottom: 20px;
+  margin-bottom: 1px;
+  margin-top:1px;
 }
 
 .formGroup label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
-  color: var(--dark);
+  color: #2c3e50;
 }
 
-.formGroup input,
-.formGroup select {
+.formGroup input {
   width: 100%;
-  padding: 12px 15px;
-  border: 2px solid #e2e8f0;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: all 0.3s;
-  background: white;
+  padding: 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
 }
 
-.formGroup input:focus,
-.formGroup select:focus {
-  border-color: var(--primary);
+.formGroup input:focus {
+  border-color: #3498db;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
-.formGroup small {
-  color: var(--gray);
-  font-size: 0.8rem;
+.passwordRequirements {
+  font-size: 14px;
+  color: #7f8c8d;
   margin-top: 5px;
-  display: block;
-  line-height: 1.4;
 }
 
-.passwordStrength {
+.errorMessage {
+  color: #e74c3c;
+  font-size: 14px;
   margin-top: 5px;
-  font-size: 0.8rem;
+  font-weight: 500;
 }
 
-.passwordStrength span:first-child {
-  color: var(--gray);
-}
-
-.passwordStrength .weak {
-  color: #ef4444;
-  font-weight: 600;
-}
-
-.passwordStrength .medium {
-  color: #f59e0b;
-  font-weight: 600;
-}
-
-.passwordStrength .strong {
-  color: #10b981;
-  font-weight: 600;
-}
-
-.formCheck {
-  display: flex;
-  align-items: flex-start;
+.roleSelection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  margin-bottom: 25px;
+  margin-top: 10px;
 }
 
-.formCheck input[type="checkbox"] {
-  margin-top: 3px;
-  width: auto;
-}
-
-.formCheck label {
-  font-size: 0.9rem;
-  color: var(--dark);
-  line-height: 1.4;
-  margin: 0;
-}
-
-.submitButton {
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 15px;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.formFooter {
+.roleOption {
   text-align: center;
-  margin-top: 25px;
-  padding-top: 20px;
-  border-top: 1px solid #e2e8f0;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-.formFooter p {
-  color: var(--gray);
-  margin: 0;
+.roleOption.selected {
+  border-color: #3498db;
+  background-color: #eaf6ff;
 }
 
-.formFooter a {
-  color: var(--primary);
+.roleOption i {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #7f8c8d;
+  display: block;
+}
+
+.roleOption.selected i {
+  color: #3498db;
+}
+
+.authBtn {
+  width: 100%;
+  padding: 15px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.authBtn:hover {
+  background: #c0392b;
+}
+
+.authFooter {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.authFooter p {
+  color: #7f8c8d;
+}
+
+.authFooter a {
+  color: #3498db;
   text-decoration: none;
   font-weight: 600;
 }
 
-.formFooter a:hover {
+.authFooter a:hover {
   text-decoration: underline;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .formSection {
-    padding: 30px 0;
-  }
-  
-  .formContainer {
-    padding: 25px;
-    margin: 0 15px;
-  }
-  
+@media (max-width: 480px) {
   .roleSelection {
     grid-template-columns: 1fr;
-  }
-  
-  .formTitle {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .formContainer {
-    padding: 20px;
-  }
-  
-  .roleOption {
-    padding: 15px;
-  }
-  
-  .roleOption i {
-    font-size: 1.5rem;
   }
 }

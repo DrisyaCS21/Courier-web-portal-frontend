@@ -1,61 +1,48 @@
-import React, { useState } from 'react';
+import React from 'react';
+// Correct import paths based on your folder structure
+import HeadOfficeDashboard from '../components/dashboards/HeadOfficeDashboard';
+import RiderDashboard from '../components/dashboards/RiderDashboard';
+import ManagerDashboard from '../components/dashboards/ManagerDashboard';
+import AdminDashboard from '../components/dashboards/AdminDashboard';
+import VendorDashboard from '../components/dashboards/VendorDashboard';
 
-const Dashboard = () => {
-  // Sample data for the dashboard
-  const [dashboardData] = useState({
-    activeShipments: 12,
-    delivered: 45,
-    pending: 7,
-    recentActivities: [
-      'Package #1234 delivered successfully',
-      'New shipment created #5678',
-      'Package #9012 out for delivery',
-      'Payment received for shipment #3456',
-      'Package #7890 arrived at sorting facility'
-    ]
-  });
+const Dashboard = ({ role, onLogout }) => {
+  const renderRoleDashboard = () => {
+    switch(role?.toLowerCase()) {
+      case 'head office':
+        return <HeadOfficeDashboard onLogout={onLogout} />;
+      case 'rider':
+        return <RiderDashboard onLogout={onLogout} />;
+      case 'manager':
+        return <ManagerDashboard onLogout={onLogout} />;
+      case 'admin':
+        return <AdminDashboard onLogout={onLogout} />;
+      case 'vendor':
+        return <VendorDashboard onLogout={onLogout} />;
+      default:
+        return (
+          <div style={{ padding: '2rem', textAlign: 'center' }}>
+            <h2>Welcome to Your Dashboard</h2>
+            <p>You have successfully logged in as <strong>{role || 'User'}</strong></p>
+            <button 
+              onClick={onLogout}
+              style={{
+                padding: '0.8rem 1.5rem',
+                background: 'transparent',
+                color: '#e74c3c',
+                border: '2px solid #e74c3c',
+                borderRadius: '5px',
+                cursor: 'pointer'
+              }}
+            >
+              Logout
+            </button>
+          </div>
+        );
+    }
+  };
 
-  return (
-    <div className="page dashboard-page">
-      <div className="dashboard-header">
-        <h1>Welcome back, User!</h1>
-        <p>Here's your shipping overview</p>
-      </div>
-      
-      <div className="stats">
-        <div className="stat-card">
-          <h3>Active Shipments</h3>
-          <p className="stat-number">{dashboardData.activeShipments}</p>
-        </div>
-        <div className="stat-card">
-          <h3>Delivered</h3>
-          <p className="stat-number">{dashboardData.delivered}</p>
-        </div>
-        <div className="stat-card">
-          <h3>Pending</h3>
-          <p className="stat-number">{dashboardData.pending}</p>
-        </div>
-      </div>
-      
-      <div className="recent-activity">
-        <h3>Recent Activity</h3>
-        <ul>
-          {dashboardData.recentActivities.map((activity, index) => (
-            <li key={index}>{activity}</li>
-          ))}
-        </ul>
-      </div>
-      
-      <div className="quick-actions">
-        <h3>Quick Actions</h3>
-        <div className="action-buttons">
-          <button className="action-btn">Create New Shipment</button>
-          <button className="action-btn">Track Package</button>
-          <button className="action-btn">View Reports</button>
-        </div>
-      </div>
-    </div>
-  );
+  return renderRoleDashboard();
 };
 
 export default Dashboard;

@@ -1,9 +1,8 @@
-// layouts/AuthLayout.jsx
 import React from 'react';
 
 const AuthLayout = ({ children }) => {
   return (
-    <div className="auth-layout">
+    <div className="auth-layout"> {/* This keeps the background */}
       <div className="auth-container">
         <div className="auth-header">
           <h1>Courier Service</h1>
